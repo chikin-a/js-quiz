@@ -6,11 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile:sass": "node-sass scss/main.scss css/style.css",
-    "start:dev": "nodemon compile:sass"
+    "start:dev": "nodemon -e scss -x \"npm run compile:sass\""
   },
   "author": "Chikin Anton",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^9.0.0"
+    "concurrently": "^8.2.2",
+    "node-sass": "^9.0.0",
+    "nodemon": "^3.0.3",
+    "sass": "^1.70.0"
   }
 }

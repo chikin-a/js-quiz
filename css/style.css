@@ -12,6 +12,21 @@
 body {
   background: #ffda63; }
 
+.score {
+  font-weight: bold;
+  font-size: 56px;
+  animation-name: show;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1; }
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    font-size: 10px; }
+  100% {
+    opacity: 1; } }
+
 .quiz {
   height: 100vh;
   display: flex;
@@ -78,34 +93,3 @@ body {
           background: #f3f5f7; }
         .quiz-body .answers-item input {
           cursor: pointer; }
-
-.final {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: -1; }
-  .final-block {
-    width: 360px;
-    height: 360px;
-    background: #fff;
-    border-radius: 20px; }
-
-.score {
-  font-weight: bold;
-  font-size: 56px;
-  animation-name: show;
-  animation-duration: 0.4s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1; }
-
-@keyframes show {
-  0% {
-    opacity: 0;
-    font-size: 10px; }
-  100% {
-    opacity: 1; } }
