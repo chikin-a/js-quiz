@@ -1,14 +1,5 @@
 const generateQuest = (arr, i) => {
   const quizBody = document.querySelector('.quiz-body')
-  const progress = document.querySelector('progress')
-  const step = document.querySelector('.quiz-step')
-
-  let temp = 100 / arr.length
-
-  progress.value += temp
-
-  step.textContent = `Питання ${i + 1}`
-
   const { type, quest } = arr[i]
   const { answers } = arr[i]
 
