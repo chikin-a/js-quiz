@@ -23,15 +23,9 @@ const nextButton = document
       stepState(solution.length)
 
       if (quizDB.length <= solution.length) {
-        const quiz = document.querySelector('.quiz')
-        const quizForm = document.querySelector('.quiz-form')
         const correctAnswers = quizDB.map((obj) => obj.solution)
 
-        quizForm.classList.add('hide')
-        setTimeout(() => {
-          const score = scoring(correctAnswers, solution)
-          quiz.innerHTML = `<p class="score">${score}/12</p> `
-        }, 400)
+        generateScore(scoring(correctAnswers, solution), quizDB)
 
         return undefined
       }

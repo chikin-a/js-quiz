@@ -70,29 +70,26 @@
     margin-bottom: 20px;
   }
 
-  &-body {
+  .answers {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
     margin-bottom: 30px;
 
-    .answers {
+    &-item {
       display: flex;
-      flex-direction: column;
-      gap: 7px;
+      align-items: center;
+      gap: 10px;
+      border-radius: 50px;
+      padding: 10px 15px;
+      transition: background-color 0.05s ease-in-out;
 
-      &-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        border-radius: 50px;
-        padding: 10px 15px;
-        transition: background-color 0.05s ease-in-out;
+      &:hover {
+        background: #f3f5f7;
+      }
 
-        &:hover {
-          background: #f3f5f7;
-        }
-
-        input {
-          cursor: pointer;
-        }
+      input {
+        cursor: pointer;
       }
     }
   }
