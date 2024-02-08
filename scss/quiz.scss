@@ -63,15 +63,15 @@
     }
   }
 
+  label {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
   &-body {
     margin-bottom: 30px;
-
-    label {
-      display: block;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
 
     .answers {
       display: flex;

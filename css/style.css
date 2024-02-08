@@ -56,13 +56,13 @@ body {
       background-color: #f3f5f7;
       border-radius: 5px;
       overflow: hidden; }
+  .quiz label {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px; }
   .quiz-body {
     margin-bottom: 30px; }
-    .quiz-body label {
-      display: block;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px; }
     .quiz-body .answers {
       display: flex;
       flex-direction: column;
