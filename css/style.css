@@ -23,13 +23,13 @@ body {
     border-radius: 20px;
     width: 540px;
     transition: all 0.4s ease-in-out; }
-    .quiz-form .button-next {
+    .quiz-form .next {
       padding: 10px 30px;
       border: none;
       border-radius: 8px;
       color: #fff;
       background: #ff5261; }
-      .quiz-form .button-next:hover {
+      .quiz-form .next:hover {
         cursor: pointer; }
   .quiz-form.hide {
     opacity: 0;
@@ -61,21 +61,21 @@ body {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px; }
-  .quiz .answers {
+  .quiz .quest {
     display: flex;
     flex-direction: column;
     gap: 7px;
     margin-bottom: 30px; }
-    .quiz .answers-item {
+    .quiz .quest .variants-item {
       display: flex;
       align-items: center;
       gap: 10px;
       border-radius: 50px;
       padding: 10px 15px;
       transition: background-color 0.05s ease-in-out; }
-      .quiz .answers-item:hover {
+      .quiz .quest .variants-item:hover {
         background: #f3f5f7; }
-      .quiz .answers-item input {
+      .quiz .quest .variants-item input {
         cursor: pointer; }
 
 .score {

@@ -1,35 +1,38 @@
-import quizDB from './module/quizDB.js'
-import generateQuest from './module/generateQuest.js'
-import progressState from './module/progressState.js'
-import stepState from './module/stepState.js'
-import scoring from './module/scoring.js'
-import generateScore from './module/generateScore.js'
+import { DB } from './module/DB.js'
+import { generationQuest } from './module/generationQuest.js'
+import { stateProgressBar } from './module/stateProgressBar.js'
+import { stateCounter } from './module/stateCounter.js'
+import { scoring } from './module/scoring.js'
+import { generationResult } from './module/generationResult.js'
 
-const solution = []
-
-generateQuest(quizDB, solution.length)
+export let currentCount = 0
+let totalScore = 0
 
 const nextButton = document
-  .querySelector('.button-next')
+  .querySelector('.next')
   .addEventListener('click', () => {
-    if (quizDB.length !== solution.length) {
-      const quest = document.querySelectorAll('input[name="quest"]:checked')
+    try {
+      const selectedVariants = document.querySelectorAll('input[name="quest"]')
+      const questData = DB[currentCount]
+      const userSolution = [...selectedVariants].map((el) => {
+        if (el.checked) return parseInt(el.value)
+      })
 
-      if (quest.length < 1) return console.error('please select variant')
+      currentCount++
+      stateProgressBar(currentCount)
 
-      quest.forEach((i) => solution.push(i.value))
+      if (scoring(questData.solution, userSolution)) totalScore++
 
-      progressState(quizDB.length)
-      stepState(solution.length)
-
-      if (quizDB.length <= solution.length) {
-        const correctAnswers = quizDB.map((obj) => obj.solution)
-
-        generateScore(scoring(correctAnswers, solution), quizDB)
-
-        return undefined
+      if (currentCount === DB.length) {
+        generationResult(totalScore)
+        console.log('end')
+      } else {
+        generationQuest()
+        stateCounter(currentCount)
       }
-
-      generateQuest(quizDB, solution.length)
+    } catch (error) {
+      console.error(error)
     }
   })
+
+generationQuest()
