@@ -13,6 +13,7 @@ body {
   background: #ffda63; }
 
 .quiz {
+  position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
